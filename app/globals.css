@@ -53,8 +53,11 @@
   --input: oklch(0.86 0.02 88);
   --ring: oklch(0.62 0.08 140);
   --radius: 0.8rem;
-  --font-sans: Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-  --font-heading: "Iropke Batang", "KoPub Batang", "Noto Serif KR", Georgia, serif;
+  --font-sans:
+    Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo',
+    'Noto Sans KR', sans-serif;
+  --font-heading:
+    'Iropke Batang', 'KoPub Batang', 'Noto Serif KR', Georgia, serif;
 }
 
 .dark {
@@ -88,8 +91,16 @@
   body {
     @apply bg-background text-foreground;
     background-image:
-      radial-gradient(circle at 8% 10%, color-mix(in oklch, var(--accent) 28%, transparent), transparent 28rem),
-      radial-gradient(circle at 90% 85%, color-mix(in oklch, var(--secondary) 65%, transparent), transparent 30rem);
+      radial-gradient(
+        circle at 8% 10%,
+        color-mix(in oklch, var(--accent) 28%, transparent),
+        transparent 28rem
+      ),
+      radial-gradient(
+        circle at 90% 85%,
+        color-mix(in oklch, var(--secondary) 65%, transparent),
+        transparent 30rem
+      );
     background-attachment: fixed;
   }
   button,
@@ -119,6 +130,18 @@
   .composer-card {
     @apply rounded-[28px] border border-border/70 bg-card/90 p-5 shadow-[0_18px_50px_rgb(75_67_49/7%)];
     backdrop-filter: blur(14px);
+  }
+
+  .composer-mode {
+    @apply flex h-8 items-center gap-1.5 rounded-lg px-3 text-xs text-muted-foreground transition-colors;
+  }
+
+  .composer-mode svg {
+    @apply size-3.5;
+  }
+
+  .composer-mode-active {
+    @apply bg-card font-medium text-foreground shadow-sm;
   }
 
   .memory-card {
